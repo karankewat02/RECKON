@@ -4,7 +4,7 @@ const db = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-
+const { createCanvas, loadImage } = require('canvas')
 const POLARDBconnection = require("./POLARDB.config.js");
 
 const userRoute = require("./routes/user");
@@ -29,7 +29,26 @@ db.connect(process.env.MONGO_URL)
   });
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.send("Welcome to the Kalashakti API");
+});
+
+const makeimg = async (img_url) => {
+  const canvas = createCanvas(500, 500)
+  const ctx = canvas.getContext('2d')
+  await loadImage(img_url).then((image) => {
+    ctx.drawImage(image, 0, 0, 500, 500)
+  })
+
+  await loadImage('./logo.png').then((image) => {
+    ctx.drawImage(image, 420, 420, 80, 80)
+  })
+  return canvas.toDataURL()
+}
+
+app.post("/mintingImage", async (req, res) => {
+  const img_url = req.body.img_url;
+  const img =await makeimg(img_url)
+  res.status(200).send(img);
 });
 
 // GET BLOGS
