@@ -71,6 +71,13 @@ export default function Menu() {
                   </a>
                 </Link>
               </li>
+              <li>
+                <Link href="/create_nft">
+                  <a className="menu-bar-link" onClick={menuToggle}>
+                    Mint NFT
+                  </a>
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
