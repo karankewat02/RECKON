@@ -64,6 +64,13 @@ export default function Menu() {
                   </a>
                 </Link>
               </li>
+              <li>
+                <Link href="/form">
+                  <a className="menu-bar-link" onClick={menuToggle}>
+                    form
+                  </a>
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
