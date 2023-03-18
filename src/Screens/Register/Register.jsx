@@ -38,7 +38,7 @@ const Register = () => {
   const registration = (event) => {
     event.preventDefault();
 
-    axios.post("http://localhost:5000/api/auth/register", {
+    axios.post("https://kalashakti-node-hosted.vercel.app/api/auth/register", {
         username: username,
         email: email,
         password: password,

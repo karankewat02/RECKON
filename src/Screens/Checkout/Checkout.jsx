@@ -35,7 +35,7 @@ export default function Checkout() {
       token: `Bearer ${loggedInUserData.data.accessToken}`,
     };
     axios.get(
-        `http://localhost:5000/api/cart/find/${loggedInUserData.data.others._id}`,
+        `https://kalashakti-node-hosted.vercel.app/api/cart/find/${loggedInUserData.data.others._id}`,
         {
           headers: headers,
         }
@@ -68,7 +68,7 @@ export default function Checkout() {
       };
       const data = {...userCartData,address: completeAddress, ammount : 350, phno : phno , email : email};
       axios
-      .post(`http://localhost:5000/api/order`, data, {
+      .post(`https://kalashakti-node-hosted.vercel.app/api/order`, data, {
         headers: headers,
       })
       .then((response) => {
@@ -92,7 +92,7 @@ export default function Checkout() {
       };
       const data = {...userCartData,address: completeAddress, ammount : 350, phno : phno , email : email};
       axios
-      .post(`http://localhost:5000/api/order/polar`, data, {
+      .post(`https://kalashakti-node-hosted.vercel.app/api/order/polar`, data, {
         headers: headers,
       })
       .then((response) => {

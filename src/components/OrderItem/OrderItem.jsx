@@ -60,7 +60,7 @@ export default function OrderItem(props) {
     if (productData.productId) {
       axios
         .get(
-          `http://localhost:5000/api/products/find/${productData?.productId}`
+          `https://kalashakti-node-hosted.vercel.app/api/products/find/${productData?.productId}`
         )
         .then(function (response) {
           // console.log('single Product data',response)
@@ -94,7 +94,7 @@ export default function OrderItem(props) {
     };
 
     axios
-      .put(`http://localhost:5000/api/cart/${props.cartID}`, data, {
+      .put(`https://kalashakti-node-hosted.vercel.app/api/cart/${props.cartID}`, data, {
         headers: headers,
       })
       .then((response) => {

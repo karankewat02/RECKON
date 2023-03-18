@@ -21,7 +21,7 @@ export default function Login2() {
   const registration = (event) => {
     event.preventDefault();
     axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://kalashakti-node-hosted.vercel.app/api/auth/register",
         {
           email: email,
           password: password,
@@ -52,7 +52,7 @@ export default function Login2() {
 
     event.preventDefault();
     
-    axios.post("http://localhost:5000/api/auth/login", {
+    axios.post("https://kalashakti-node-hosted.vercel.app/api/auth/login", {
         email: email,
         password: password    
     }, 

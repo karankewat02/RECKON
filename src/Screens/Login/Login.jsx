@@ -18,7 +18,7 @@ const Login = () => {
 
   const login = () => {
 
-    axios.post("http://localhost:5000/api/auth/login", {
+    axios.post("https://kalashakti-node-hosted.vercel.app/api/auth/login", {
         email: email,
         password: pass    
     }, 

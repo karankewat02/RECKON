@@ -9,7 +9,7 @@ export default function Blogs() {
     const [loading, setLoading] = useState(true)
 
     const getData = async() => {
-        axios.get("http://localhost:5000/blogs")
+        axios.get("https://kalashakti-node-hosted.vercel.app/blogs")
         .then((res) => {
             console.log(res.data)
             setData(res.data)

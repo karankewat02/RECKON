@@ -14,7 +14,7 @@ const HomeDecortRegion = () => {
 
     //   useEffect(() => {
     //     setLoading(true)
-    //     axios.get("http://localhost:5000/api/products")
+    //     axios.get("https://kalashakti-node-hosted.vercel.app/api/products")
     //       .then(function (response) {
     //           setProductData(response.data);
     //           console.log(response)
@@ -30,7 +30,7 @@ const HomeDecortRegion = () => {
     const getMovies = async () => {
         setLoading(true)
         try {
-            const res = await fetch("http://localhost:5000/api/products");
+            const res = await fetch("https://kalashakti-node-hosted.vercel.app/api/products");
             const data = await res.json();
             // console.log(data);
             setProductData(data);

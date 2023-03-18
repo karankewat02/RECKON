@@ -31,7 +31,7 @@ export default function ProductDetail() {
 
         setLoading(true)
         if(id){
-            axios.get(`http://localhost:5000/api/products/find/${id}`)
+            axios.get(`https://kalashakti-node-hosted.vercel.app/api/products/find/${id}`)
             .then(function (response) {
                 setProductData(response.data);
                 setactiveImg(response.data.img[0])
@@ -61,7 +61,7 @@ export default function ProductDetail() {
             cartId: cartId
           }
           
-        axios.put(`http://localhost:5000/api/user/${loggedInUserData.data.others._id}`, data, {
+        axios.put(`https://kalashakti-node-hosted.vercel.app/api/user/${loggedInUserData.data.others._id}`, data, {
             headers: headers
         })
         .then((response) => {
@@ -100,7 +100,7 @@ export default function ProductDetail() {
                     ]
                   }
                   
-                axios.post("http://localhost:5000/api/cart/", data, {
+                axios.post("https://kalashakti-node-hosted.vercel.app/api/cart/", data, {
                     headers: headers
                 })
                 .then(async(response) => {
@@ -152,7 +152,7 @@ export default function ProductDetail() {
                     ]
                   }
                   
-                axios.post("http://localhost:5000/api/cart/polar", data, {
+                axios.post("https://kalashakti-node-hosted.vercel.app/api/cart/polar", data, {
                     headers: headers
                 })
                 .then((response) => {

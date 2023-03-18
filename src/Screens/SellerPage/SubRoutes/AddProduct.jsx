@@ -58,7 +58,7 @@ export default function AddProduct() {
     "token": `Bearer ${loggedInUserData.data.accessToken}`,
   };
   const body = ProductData;
-  axios.post(`http://localhost:5000/api/products`, body,
+  axios.post(`https://kalashakti-node-hosted.vercel.app/api/products`, body,
       {
         headers: headers,
       }

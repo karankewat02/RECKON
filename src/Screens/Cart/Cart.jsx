@@ -4,7 +4,7 @@ import Style from './Cart.module.css'
 import Context from '../../Context/Context'
 import OrderItem from '../../components/OrderItem/OrderItem'
 import { toast } from 'react-hot-toast'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 const axios = require('axios').default
 
@@ -18,7 +18,7 @@ export default function Cart() {
                 'Content-Type': 'application/json',
                 'token': `Bearer ${loggedInUserData.data.accessToken}`
             }
-            axios.get(`http://localhost:5000/api/cart/find/${loggedInUserData.data.others._id}`, {
+            axios.get(`https://kalashakti-node-hosted.vercel.app/api/cart/find/${loggedInUserData.data.others._id}`, {
                 headers: headers
             })
             .then((response) => {
@@ -36,6 +36,7 @@ export default function Cart() {
             })
     }
 
+    const navigate = useNavigate()
 
     useEffect(()=>{    
         getData();
@@ -73,7 +74,13 @@ export default function Cart() {
             :<p>Loign First</p>}
         </>
         :
-            <p>Nothing to See here go buy something first</p>
+            <div style={{minHeight:"80vh", display:"grid",placeItems:"center",textAlign:"center"}}>
+                <p>Nothing to See here go buy something first
+                    <br />
+                    <button onClick={()=>navigate('/ecommerce')} style={{background:"var(--accent-color)", color:"#fff",padding:"1rem 2rem",border:0, borderRadius:"100vw", marginTop:"2rem", cursor:"pointer", fontVariant:"bold"}}>Explore</button>
+                </p>
+                
+            </div>
         }
         </>
         }

@@ -12,7 +12,7 @@ export default function Orders() {
 
     const getOrders = async () => {
             setLoading(true)
-            axios.get("http://localhost:5000/api/products")
+            axios.get("https://kalashakti-node-hosted.vercel.app/api/products")
               .then(function (response) {
                   setProductData(response.data);
                   console.log(response)

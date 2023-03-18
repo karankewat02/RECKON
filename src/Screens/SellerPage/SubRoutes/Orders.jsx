@@ -15,7 +15,7 @@ export default function Orders() {
             'Content-Type': 'application/json',
             'token': `Bearer ${loggedInUserData.data.accessToken}`
         }
-        axios.get("http://localhost:5000/api/order",{
+        axios.get("https://kalashakti-node-hosted.vercel.app/api/order",{
             headers: headers
         })
         .then(function (response) {
