@@ -4,7 +4,7 @@ export default class form extends Component {
   componentDidMount() {
     (function (d, m) {
       var kommunicateSettings =
-        { "appId": "402ee2a38b73d828342689246987096c", "popupWidget": true, "automaticChatOpenOnNavigation": true };
+        { "appId": "1406b5413ec6618562ed297be5ca86050", "popupWidget": true, "automaticChatOpenOnNavigation": true };
       var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
       s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
       var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
@@ -36,7 +36,7 @@ export default class form extends Component {
             <br />
             <details>
               <summary>How much is Royalty per NFT?</summary>
-              <p>10%! This value is subject to change without prior information</p>
+              <p>5%! This value is subject to change without prior information</p>
             </details>
             <br />
             <details>
