@@ -11,36 +11,8 @@ export default function NFTMinting() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  const handelMinting = async (img_url) => {
-    await axios
-      .post("http://localhost:5000/mintingImage", {
-        img_url: img_url,
-      })
-      .then(async(res) => {
-        const image = new Image();
-        image.src = res.data;
+  const handelMinting =  () => {
 
-        image.onload = () => {
-        const canvas = document.createElement('canvas');
-        canvas.width = image.width;
-        canvas.height = image.height;
-
-        const context = canvas.getContext('2d');
-        context.drawImage(image, 0, 0);
-
-        const downloadLink = document.createElement('a');
-        downloadLink.download = 'image.png';
-        downloadLink.href = canvas.toDataURL();
-        downloadLink.click();
-        };
-        toast.success("Image Downloaded");
-      })
-      .catch((err) => {
-        toast.error("Something went wrong ");
-      });
-
-
-    navigate("/seller/nftMinting/mintingScreen");
   };
 
   const getOrders = async () => {
@@ -111,7 +83,7 @@ export default function NFTMinting() {
                           alignItem: "center",
                         }}
                       >
-                        <button onClick={() => handelMinting(e?.img[0])}>
+                        <button onClick={handelMinting}>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6"
